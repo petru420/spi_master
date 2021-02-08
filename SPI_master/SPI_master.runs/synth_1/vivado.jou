@@ -1,0 +1,12 @@
+#-----------------------------------------------------------
+# Vivado v2020.2 (64-bit)
+# SW Build 3064766 on Wed Nov 18 09:12:45 MST 2020
+# IP Build 3064653 on Wed Nov 18 14:17:31 MST 2020
+# Start of session at: Fri Feb  5 19:46:39 2021
+# Process ID: 6804
+# Current directory: C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.runs/synth_1
+# Command line: vivado.exe -log SPI_master_cs.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source SPI_master_cs.tcl
+# Log file: C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.runs/synth_1/SPI_master_cs.vds
+# Journal file: C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.runs/synth_1\vivado.jou
+#-----------------------------------------------------------
+source SPI_master_cs.tcl -notrace

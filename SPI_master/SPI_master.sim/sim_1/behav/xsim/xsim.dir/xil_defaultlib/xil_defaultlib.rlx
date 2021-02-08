@@ -1,0 +1,8 @@
+0.7
+2020.2
+Nov 18 2020
+09:47:47
+C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.sim/sim_1/behav/xsim/glbl.v,1605673889,verilog,,,,glbl,,,,,,,,
+C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.srcs/sim_1/new/SPI_master_tb.v,1612804304,verilog,,,,SPI_master_tb,,,,,,,,
+C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.srcs/sources_1/new/SPI_master_cs.v,1612806601,verilog,,C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.srcs/sources_1/new/spi_master.v,,SPI_master_cs,,,,,,,,
+C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.srcs/sources_1/new/spi_master.v,1612803735,verilog,,C:/Xilinx/training/xilinx_projects/SPI_master/SPI_master.srcs/sim_1/new/SPI_master_tb.v,,spi_master,,,,,,,,
