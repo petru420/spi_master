@@ -25,16 +25,17 @@ module SPI_master_tb();
     parameter SPI_MODE = 3;
     parameter CLKS_PER_HALF_BIT = 4;
     parameter MAIN_CLK_DELAY    = 2;
-    parameter MAX_BYTES_PER_CS  = 2;
-    parameter CS_INACTIVE_CLKS  = 10;
+    parameter MAX_BYTES_PER_CS  = 3;
+    parameter CS_INACTIVE_CLKS  = 5;
     
     reg r_Rst_L     = 1'b0;
     wire w_SPI_Clk;
-    reg r_SPI_En    = 1'b0;
+   // reg r_SPI_En    = 1'b0;
     reg r_Clk       = 1'b0;
     wire w_SPI_CS_n;
     wire w_SPI_MOSI;
-    wire w_SPI_MISO;
+    reg r_SPI_MISO;
+    reg r_temp;
     
     reg [7:0] r_Master_TX_Byte  = 0;
     reg r_Master_TX_DV          = 1'b0;
@@ -43,7 +44,7 @@ module SPI_master_tb();
     wire [7:0] w_Master_RX_Byte;
     //wire w_Master_RX_Count; 
     wire [$clog2(MAX_BYTES_PER_CS+1)-1:0] w_Master_RX_Count; 
-    reg [1:0] r_Master_TX_Count = 2'b10;
+    reg [$clog2(MAX_BYTES_PER_CS+1)-1:0] r_Master_TX_Count = MAX_BYTES_PER_CS; //?
     
 always #(MAIN_CLK_DELAY) r_Clk = ~r_Clk;
     
@@ -66,24 +67,27 @@ SPI_master_cs #(.SPI_MODE(SPI_MODE),
                 .o_RX_Byte(w_Master_RX_Byte),
                 
                 .o_SPI_Clk(w_SPI_Clk),
-                .i_SPI_MISO(w_SPI_MISO),
+                .i_SPI_MISO(r_SPI_MISO),
                 .o_SPI_MOSI(w_SPI_MOSI),
                 .o_SPI_CS_n(w_SPI_CS_n)
                 );
                 
 task SendSingleByte(input [7:0] data);
         begin
-        @(posedge r_Clk);
-            begin
-                r_Master_TX_Byte    <= data;
-                r_Master_TX_DV      <= 1'b1;
-            end
-        @(posedge r_Clk);
-            begin r_Master_TX_DV    <=  1'b0;
-            end
-        @(posedge r_Clk); //?
-        @(posedge w_Master_TX_Ready); //?
-    end
+            if (w_Master_TX_Ready)
+                begin
+                    @(posedge r_Clk);
+                        begin
+                            r_Master_TX_Byte    <= data;
+                            r_Master_TX_DV      <= 1'b1;
+                        end
+                    @(posedge r_Clk);
+                        begin r_Master_TX_DV    <=  1'b0;
+                        end
+                    @(posedge r_Clk); //?
+                    @(posedge w_Master_TX_Ready); //?
+                end
+         end    
 endtask
 
 initial
@@ -93,10 +97,16 @@ initial
         repeat(10)@(posedge r_Clk);
             r_Rst_L = 1'b1;
         
+        assign r_SPI_MISO = w_SPI_MOSI;
+        
         SendSingleByte(8'hF3);
-        $display ("Sent out 0xC1, Received 0x%X", w_Master_RX_Byte);
+        $display ("Sent out 0xF3, Received 0x%X", w_Master_RX_Byte);
+        repeat(5)@(posedge r_Clk);
         SendSingleByte(8'hC2);
         $display ("Sent out 0xC2, Received 0x%X", w_Master_RX_Byte);
+        repeat(7)@(posedge r_Clk);
+        SendSingleByte(8'hb1);
+        $display ("Sent out 0xb1, Received 0x%X", w_Master_RX_Byte);
         
         repeat(100)@(posedge r_Clk);
         $finish();

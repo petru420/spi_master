@@ -11,42 +11,39 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="342634fs"></ZoomStartTime>
-      <ZoomEndTime time="365356fs"></ZoomEndTime>
-      <Cursor1Time time="348414fs"></Cursor1Time>
+      <ZoomStartTime time="0fs"></ZoomStartTime>
+      <ZoomEndTime time="409508fs"></ZoomEndTime>
+      <Cursor1Time time="531276fs"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
       <NameColumnWidth column_width="227"></NameColumnWidth>
-      <ValueColumnWidth column_width="145"></ValueColumnWidth>
+      <ValueColumnWidth column_width="110"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="32" />
+   <WVObjectSize size="26" />
    <wvobject fp_name="/SPI_master_tb/r_Rst_L" type="logic">
       <obj_property name="ElementShortName">r_Rst_L</obj_property>
       <obj_property name="ObjectShortName">r_Rst_L</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/w_SPI_Clk" type="logic">
-      <obj_property name="ElementShortName">w_SPI_Clk</obj_property>
-      <obj_property name="ObjectShortName">w_SPI_Clk</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/r_SPI_En" type="logic">
-      <obj_property name="ElementShortName">r_SPI_En</obj_property>
-      <obj_property name="ObjectShortName">r_SPI_En</obj_property>
    </wvobject>
    <wvobject fp_name="/SPI_master_tb/r_Clk" type="logic">
       <obj_property name="ElementShortName">r_Clk</obj_property>
       <obj_property name="ObjectShortName">r_Clk</obj_property>
    </wvobject>
-   <wvobject fp_name="/SPI_master_tb/w_SPI_CS_n" type="logic">
-      <obj_property name="ElementShortName">w_SPI_CS_n</obj_property>
-      <obj_property name="ObjectShortName">w_SPI_CS_n</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/w_SPI_MOSI" type="logic">
-      <obj_property name="ElementShortName">w_SPI_MOSI</obj_property>
-      <obj_property name="ObjectShortName">w_SPI_MOSI</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/w_SPI_MISO" type="logic">
-      <obj_property name="ElementShortName">w_SPI_MISO</obj_property>
-      <obj_property name="ObjectShortName">w_SPI_MISO</obj_property>
+   <wvobject fp_name="group35" type="group">
+      <obj_property name="label">SPI_Sig</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <obj_property name="isExpanded"></obj_property>
+      <wvobject fp_name="/SPI_master_tb/w_SPI_Clk" type="logic">
+         <obj_property name="ElementShortName">w_SPI_Clk</obj_property>
+         <obj_property name="ObjectShortName">w_SPI_Clk</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SPI_master_tb/w_SPI_MOSI" type="logic">
+         <obj_property name="ElementShortName">w_SPI_MOSI</obj_property>
+         <obj_property name="ObjectShortName">w_SPI_MOSI</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SPI_master_tb/w_SPI_CS_n" type="logic">
+         <obj_property name="ElementShortName">w_SPI_CS_n</obj_property>
+         <obj_property name="ObjectShortName">w_SPI_CS_n</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="/SPI_master_tb/r_Master_TX_Byte" type="array">
       <obj_property name="ElementShortName">r_Master_TX_Byte[7:0]</obj_property>
@@ -60,49 +57,57 @@
       <obj_property name="ElementShortName">w_Master_TX_Ready</obj_property>
       <obj_property name="ObjectShortName">w_Master_TX_Ready</obj_property>
    </wvobject>
-   <wvobject fp_name="/SPI_master_tb/w_Master_RX_DV" type="logic">
-      <obj_property name="ElementShortName">w_Master_RX_DV</obj_property>
-      <obj_property name="ObjectShortName">w_Master_RX_DV</obj_property>
-   </wvobject>
    <wvobject fp_name="/SPI_master_tb/w_Master_RX_Byte" type="array">
       <obj_property name="ElementShortName">w_Master_RX_Byte[7:0]</obj_property>
       <obj_property name="ObjectShortName">w_Master_RX_Byte[7:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SPI_master_tb/w_Master_RX_DV" type="logic">
+      <obj_property name="ElementShortName">w_Master_RX_DV</obj_property>
+      <obj_property name="ObjectShortName">w_Master_RX_DV</obj_property>
    </wvobject>
    <wvobject fp_name="/SPI_master_tb/w_Master_RX_Count" type="array">
       <obj_property name="ElementShortName">w_Master_RX_Count[1:0]</obj_property>
       <obj_property name="ObjectShortName">w_Master_RX_Count[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SPI_master_tb/r_Master_TX_Count" type="logic">
-      <obj_property name="ElementShortName">r_Master_TX_Count</obj_property>
-      <obj_property name="ObjectShortName">r_Master_TX_Count</obj_property>
+   <wvobject fp_name="/SPI_master_tb/r_Master_TX_Count" type="array">
+      <obj_property name="ElementShortName">r_Master_TX_Count[1:0]</obj_property>
+      <obj_property name="ObjectShortName">r_Master_TX_Count[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SPI_master_tb/SPI_MODE" type="array">
-      <obj_property name="ElementShortName">SPI_MODE[31:0]</obj_property>
-      <obj_property name="ObjectShortName">SPI_MODE[31:0]</obj_property>
+   <wvobject fp_name="/SPI_master_tb/DUT/i_TX_Count" type="array">
+      <obj_property name="ElementShortName">i_TX_Count[1:0]</obj_property>
+      <obj_property name="ObjectShortName">i_TX_Count[1:0]</obj_property>
    </wvobject>
-   <wvobject fp_name="/SPI_master_tb/CLKS_PER_HALF_BIT" type="array">
-      <obj_property name="ElementShortName">CLKS_PER_HALF_BIT[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CLKS_PER_HALF_BIT[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/MAIN_CLK_DELAY" type="array">
-      <obj_property name="ElementShortName">MAIN_CLK_DELAY[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MAIN_CLK_DELAY[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/MAX_BYTES_PER_CS" type="array">
-      <obj_property name="ElementShortName">MAX_BYTES_PER_CS[31:0]</obj_property>
-      <obj_property name="ObjectShortName">MAX_BYTES_PER_CS[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/CS_INACTIVE_CLKS" type="array">
-      <obj_property name="ElementShortName">CS_INACTIVE_CLKS[31:0]</obj_property>
-      <obj_property name="ObjectShortName">CS_INACTIVE_CLKS[31:0]</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/DUT/SPI_Master_Inst/w_CPOL" type="logic">
-      <obj_property name="ElementShortName">w_CPOL</obj_property>
-      <obj_property name="ObjectShortName">w_CPOL</obj_property>
-   </wvobject>
-   <wvobject fp_name="/SPI_master_tb/DUT/SPI_Master_Inst/w_CPHA" type="logic">
-      <obj_property name="ElementShortName">w_CPHA</obj_property>
-      <obj_property name="ObjectShortName">w_CPHA</obj_property>
+   <wvobject fp_name="group34" type="group">
+      <obj_property name="label">Constants</obj_property>
+      <obj_property name="DisplayName">label</obj_property>
+      <wvobject fp_name="/SPI_master_tb/SPI_MODE" type="array">
+         <obj_property name="ElementShortName">SPI_MODE[31:0]</obj_property>
+         <obj_property name="ObjectShortName">SPI_MODE[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SPI_master_tb/MAIN_CLK_DELAY" type="array">
+         <obj_property name="ElementShortName">MAIN_CLK_DELAY[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MAIN_CLK_DELAY[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SPI_master_tb/MAX_BYTES_PER_CS" type="array">
+         <obj_property name="ElementShortName">MAX_BYTES_PER_CS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">MAX_BYTES_PER_CS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SPI_master_tb/CS_INACTIVE_CLKS" type="array">
+         <obj_property name="ElementShortName">CS_INACTIVE_CLKS[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CS_INACTIVE_CLKS[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SPI_master_tb/CLKS_PER_HALF_BIT" type="array">
+         <obj_property name="ElementShortName">CLKS_PER_HALF_BIT[31:0]</obj_property>
+         <obj_property name="ObjectShortName">CLKS_PER_HALF_BIT[31:0]</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SPI_master_tb/DUT/SPI_Master_Inst/w_CPHA" type="logic">
+         <obj_property name="ElementShortName">w_CPHA</obj_property>
+         <obj_property name="ObjectShortName">w_CPHA</obj_property>
+      </wvobject>
+      <wvobject fp_name="/SPI_master_tb/DUT/SPI_Master_Inst/w_CPOL" type="logic">
+         <obj_property name="ElementShortName">w_CPOL</obj_property>
+         <obj_property name="ObjectShortName">w_CPOL</obj_property>
+      </wvobject>
    </wvobject>
    <wvobject fp_name="/SPI_master_tb/DUT/SPI_Master_Inst/r_SPI_Clk_Count" type="array">
       <obj_property name="ElementShortName">r_SPI_Clk_Count[2:0]</obj_property>
@@ -116,6 +121,11 @@
    <wvobject fp_name="/SPI_master_tb/DUT/SPI_Master_Inst/r_SPI_Clk_Edges" type="array">
       <obj_property name="ElementShortName">r_SPI_Clk_Edges[4:0]</obj_property>
       <obj_property name="ObjectShortName">r_SPI_Clk_Edges[4:0]</obj_property>
+      <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SPI_master_tb/DUT/r_CS_Inactive_Count" type="array">
+      <obj_property name="ElementShortName">r_CS_Inactive_Count[2:0]</obj_property>
+      <obj_property name="ObjectShortName">r_CS_Inactive_Count[2:0]</obj_property>
       <obj_property name="Radix">UNSIGNEDDECRADIX</obj_property>
    </wvobject>
    <wvobject fp_name="/SPI_master_tb/DUT/SPI_Master_Inst/r_Leading_Edge" type="logic">
@@ -151,5 +161,13 @@
    <wvobject fp_name="/SPI_master_tb/DUT/r_TX_Count" type="array">
       <obj_property name="ElementShortName">r_TX_Count[1:0]</obj_property>
       <obj_property name="ObjectShortName">r_TX_Count[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SPI_master_tb/DUT/r_SM_CS" type="array">
+      <obj_property name="ElementShortName">r_SM_CS[1:0]</obj_property>
+      <obj_property name="ObjectShortName">r_SM_CS[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/SPI_master_tb/DUT/o_RX_Count" type="array">
+      <obj_property name="ElementShortName">o_RX_Count[1:0]</obj_property>
+      <obj_property name="ObjectShortName">o_RX_Count[1:0]</obj_property>
    </wvobject>
 </wave_config>

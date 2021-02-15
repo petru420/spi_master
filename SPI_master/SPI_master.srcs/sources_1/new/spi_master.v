@@ -118,7 +118,7 @@ always @(posedge i_Clk or negedge i_Rst_L) //reads byte from i_TX_Byte to intern
             end 
         else 
             begin
-                r_TX_DV <= i_TX_DV;
+                r_TX_DV <= i_TX_DV; 
                 if (i_TX_DV)
                     begin
                         r_TX_Byte <= i_TX_Byte;

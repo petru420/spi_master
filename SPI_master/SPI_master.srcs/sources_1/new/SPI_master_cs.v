@@ -23,7 +23,7 @@
 module SPI_master_cs
     #(  parameter SPI_MODE              = 0,
         parameter CLKS_PER_HALF_BIT     = 2,
-        parameter MAX_BYTES_PER_CS      = 2,
+        parameter MAX_BYTES_PER_CS      = 3,
         parameter CS_INACTIVE_CLKS      = 10
     )
     (
@@ -54,7 +54,7 @@ localparam CS_INACTIVE  = 2'b10;
 reg [1:0] r_SM_CS;
 reg r_CS_n;
 //reg r_CS_Inactive_Count;
-reg [$clog2(CS_INACTIVE_CLKS)-1:0] r_CS_Inactive_Count;
+reg [$clog2(CS_INACTIVE_CLKS+1)-1:0] r_CS_Inactive_Count; //?
 //reg r_TX_Count;
 reg [$clog2(MAX_BYTES_PER_CS+1)-1:0] r_TX_Count;
 wire w_Master_Ready; 
@@ -86,7 +86,7 @@ always @(posedge i_Clk or negedge i_Rst_L)
                 r_SM_CS                 <= IDLE;
                 r_CS_n                  <= 1'b1;
                 r_TX_Count              <= 0;
-                r_CS_Inactive_Count     <= CS_INACTIVE_CLKS;
+                r_CS_Inactive_Count     <= CS_INACTIVE_CLKS -1;
             end
         else
             begin
@@ -115,7 +115,7 @@ always @(posedge i_Clk or negedge i_Rst_L)
                                 else
                                     begin
                                         r_CS_n  <= 1'b1;
-                                        r_CS_Inactive_Count <= CS_INACTIVE_CLKS;
+                                        r_CS_Inactive_Count <= CS_INACTIVE_CLKS -1;
                                         r_SM_CS <= CS_INACTIVE;
                                     end
                             end
@@ -142,20 +142,20 @@ always @(posedge i_Clk or negedge i_Rst_L)
             end 
     end
        
-always @(posedge i_Clk)
+always @(posedge i_Clk) //?
     begin
         if (r_CS_n)
             begin
                 o_RX_Count <= 0;
             end
         else if (o_RX_DV)
-            begin
+                begin
                 o_RX_Count <= o_RX_Count + 1'b1;
             end
     end                             
  
  assign o_SPI_CS_n = r_CS_n;
  
- assign o_TX_Ready = ((r_SM_CS == IDLE) | (r_SM_CS == TRANSFER && w_Master_Ready == 1'b1 && r_TX_Count >0))&~i_TX_DV;      
+ assign o_TX_Ready = ((r_SM_CS == IDLE) | (r_SM_CS == TRANSFER && w_Master_Ready == 1'b1 && r_TX_Count >0))&~i_TX_DV; //?     
      
 endmodule

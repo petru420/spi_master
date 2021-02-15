@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1612543597">
+<GenRun Id="synth_1" LaunchPart="xczu7ev-ffvc1156-2-e" LaunchTime="1613400063">
   <File Type="PA-TCL" Name="SPI_master_cs.tcl"/>
+  <File Type="RDS-PROPCONSTRS" Name="SPI_master_cs_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="SPI_master_cs_reports.tcl"/>
   <File Type="RDS-RDS" Name="SPI_master_cs.vds"/>
   <File Type="RDS-UTIL" Name="SPI_master_cs_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="SPI_master_cs_utilization_synth.pb"/>
   <File Type="RDS-DCP" Name="SPI_master_cs.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="SPI_master_cs_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="SPI_master_cs_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/new/spi_master.v">
